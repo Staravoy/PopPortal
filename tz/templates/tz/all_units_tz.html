@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблиця</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h3>{{name_table}}. {{unit}}. {{region}}.</h3>
+<table>
+        <thead>
+            <tr>
+                <th>Вид</th>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Номер</th>
+                <th>Відповідальний</th>
+                <th>Застосування</th>
+                <th>Паливо</th>
+                <th>Колір</th>
+                <th>Рік випуску</th>
+                <th>Стан</th>
+                <th>Дата ремонту</th>
+                <th>Пробіг</th>
+                <th>Радіостанція</th>
+                <th>СГУ</th>
+                <th>Посадочні місця</th>
+                <th>Належність</th>
+
+            </tr>
+        </thead>
+     {% for tz in all_tz %}
+         <tbody>
+            <tr>
+                <td>{{ tz.type_tz }}</td>
+                <td>{{ tz.brand_tz }}</td>
+                <td>{{ tz.model_tz }}</td>
+                <td>{{ tz.numer_tz }}</td>
+                <td>{{ tz.liable_tz }}</td>
+                <td>{{ tz.use_tz }}</td>
+                <td>{{ tz.fuel_type }}</td>
+                <td>{{ tz.color_tz }}</td>
+                <td>{{ tz.year_tz }}</td>
+                <td>{{ tz.condition_tz }}</td>
+                <td>{{ tz.refit_tz }}</td>
+                <td>{{ tz.run_tz }}</td>
+                <td>{{ tz.radio_on_tz }}</td>
+                <td>{{ tz.sgu_tz }}</td>
+                <td>{{ tz.seats_tz }}</td>
+                <td>{{ tz.balanser_tz }}</td>
+
+            </tr>
+            {% endfor %}
+         </tbody>
+     </table>
+</body>
+</html>

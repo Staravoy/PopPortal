@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вихід</title>
+</head>
+<body>
+{% extends "tz/base.html" %}
+
+{% block content %}
+ <p>Ви вийшли з акаунту!!! Дякую за службу!!!</p>
+    <input type="hidden" name="next" value="{% url 'tz:index' %}" />
+{% endblock content%}
+
+</body>
+</html>

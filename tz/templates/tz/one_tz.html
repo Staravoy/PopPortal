@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблиця</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<h3>{{name_table}}</h3>
+<table>
+        <thead>
+            <tr>
+                <th>Вид</th>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Номер</th>
+                <th>Відповідальний</th>
+                <th>Застосування</th>
+                <th>Паливо</th>
+                <th>Колір</th>
+                <th>Рік випуску</th>
+                <th>Стан</th>
+                <th>Дата ремонту</th>
+                <th>Пробіг</th>
+                <th>Наявність радіостанції</th>
+                <th>Наявність СГУ</th>
+                <th>Посадочні місця</th>
+                <th>Належність</th>
+            </tr>
+        </thead>
+         <tbody>
+            <tr>
+                <td>{{ tz.type_tz }}</td>
+                <td>{{ tz.brand_tz }}</td>
+                <td>{{ tz.model_tz }}</td>
+                <td>{{ tz.numer_tz }}</td>
+                <td>{{ tz.liable_tz }}</td>
+                <td>{{ tz.use_tz }}</td>
+                <td>{{ tz.fuel_type }}</td>
+                <td>{{ tz.color_tz }}</td>
+                <td>{{ tz.year_tz }}</td>
+                <td>{{ tz.condition_tz }}</td>
+                <td>{{ tz.refit_tz }}</td>
+                <td>{{ tz.run_tz }}</td>
+                <td>{{ tz.radio_on_tz }}</td>
+                <td>{{ tz.sgu_tz }}</td>
+                <td>{{ tz.seats_tz }}</td>
+                <td>{{ tz.balanser_tz }}</td>
+
+            </tr>
+         </tbody>
+     </table>
+
+{% block content %}{% endblock content%}
+
+<div class="d-flex justify-content-evenly mt-3">
+  <a href="{% url 'tz:tz_unit' %}" class="btn btn-primary" style="width: 25%">На головну сторінку</a>
+  <a href="{% url 'tz:edit_tz' tz_id=tz.id %}" class="btn btn-primary" style="width: 25%">Редагувати</a>
+</div>
+
+</body>
+</html>

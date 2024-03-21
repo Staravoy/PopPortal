@@ -1,0 +1,5 @@
+node_modules/
+.venv
+.idea
+.Користувачі.txt
+.поля.txt

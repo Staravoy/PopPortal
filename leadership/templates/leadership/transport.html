@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Транспорт підрозділів</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Увесь транспорт Поліції особливого призначення.</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Регіон</th>
+                <th>Підрозділ</th>
+                <th><a href="{% url 'leadership:all_transport' type='all' %}">Загальна кількість ({{amount_transport}})</a></th>
+                <th><a href="{% url 'leadership:all_transport' type='Легковий' %}">Легковий ({{car}})</a></th>
+                <th><a href="{% url 'leadership:all_transport' type='Легковий' %}">Позашляховик ({{suv}})</a></th>
+                <th><a href="{% url 'leadership:all_transport' type='Мікроавтобус' %}">Мікроавтобуси ({{minibus}})</a></th>
+                <th><a href="{% url 'leadership:all_transport' type='Автобус' %}">Автобуси ({{bus}})</a></th>
+                <th><a href="{% url 'leadership:all_transport' type='Пікап' %}">Пікапи ({{pickup}})</a></th>
+                <th><a href="{% url 'leadership:all_transport' type='Вантажний' %}">Вантажівки ({{truck}})</a></th>
+                <th><a href="{% url 'leadership:all_transport' type='Бронетехніка' %}">Бронетехніка ({{armored}})</a></th>
+                <th><a href="{% url 'leadership:all_transport' type='Інша' %}">Інші ({{other}})</a></th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for region_unit in region_unit_data %}
+    <tr>
+        <td>{{ region_unit.region }}</td>
+        <td>{{ region_unit.unit }}</td>
+        <td>{{ region_unit.total_count }}</td>
+        <td>{{ region_unit.Легковий }}</td>
+        <td>{{ region_unit.Позашляховик }}</td>
+        <td>{{ region_unit.Мікроавтобус }}</td>
+        <td>{{ region_unit.Автобус }}</td>
+        <td>{{ region_unit.Пікап }}</td>
+        <td>{{ region_unit.Вантажний }}</td>
+        <td>{{ region_unit.Бронетехніка }}</td>
+        <td>{{ region_unit.Інша }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+    </table>
+
+</body>
+</html>

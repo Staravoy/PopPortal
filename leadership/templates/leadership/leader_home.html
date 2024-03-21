@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сторінка керівника</title>
+</head>
+<body>
+{% extends "tz/base.html" %}
+
+{% block content %}
+<h1>Сторінка керівника</h1>
+<p><a href="#">Особовий склад</a></p>
+<p><a href="{% url 'leadership:transport' %}">Транспорт</a></p>
+<p><a href="#">Майно</a></p>
+{% endblock content%}
+</body>
+</html>
